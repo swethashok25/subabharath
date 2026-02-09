@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  overflow-y:auto;
+}
+
+/* 💗 Floating Hearts */
+.heart{
+  position:absolute;
+  color:#ff1493;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* 🔑 Container */
+.container{
+  background:rgba(255,240,245,0.95);
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 0 40px rgba(255,20,147,0.4);
+  max-width:900px;
+  width:95%;
+  margin:40px 0;
+  text-align:center;
+  animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:scale(0.9);}
+  to{opacity:1;transform:scale(1);}
+}
+
+h1{
+  color:#ff1493;
+  font-size:3em;
+  margin-bottom:15px;
+}
+
+p{
+  color:#8b008b;
+  font-size:1.2em;
+  margin-bottom:20px;
+}
+
+/* 💖 Love Image */
+.main-image{
+  border-radius:25px;
+  border:5px solid #ff69b4;
+  box-shadow:0 10px 30px rgba(255,20,147,0.5);
+  transition:transform 0.5s;
+}
+
+.love-image{
+  width:320px;
+  height:420px;
+  object-fit:cover;
+}
+
+.main-image:hover{
+  transform:scale(1.05);
+}
+
+/* 💕 Button */
+.btn{
+  background:linear-gradient(45deg,#ff1493,#ff69b4);
+  color:white;
+  padding:15px 35px;
+  border-radius:50px;
+  font-size:1.2em;
+  border:none;
+  cursor:pointer;
+  margin-top:20px;
+  box-shadow:0 5px 15px rgba(255,20,147,0.6);
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* 💕 Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  margin-top:25px;
+}
+
+.photo{
+  width:200px;
+  text-align:center;
+}
+
+.photo img{
+  width:200px;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  border:3px solid #ff69b4;
+  box-shadow:0 5px 15px rgba(255,105,180,0.5);
+  transition:transform 0.4s;
+}
+
+.photo img:hover{
+  transform:scale(1.1);
+}
+
+.photo p{
+  color:#ff1493;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+/* 💝 Third Page */
+#thirdPage{
+  text-align:center;
+}
+
+.third-image{
+  width:300px;
+  height:420px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(255,105,180,0.6);
+  margin:20px auto;
+  display:block;   /* ✅ THIS CENTERS THE IMAGE */
+  animation:fade 1s ease-in-out;
+}
+
+
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* 🔑 PAGE VISIBILITY */
+.section{
+  display:none;
+  width:100%;
+}
+
+.section.active{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💕 Floating Hearts -->
+<script>
+for(let i=0;i<20;i++){
+  let heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+4)+"s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<div class="container">
+
+<!-- 💖 FIRST PAGE -->
+<div id="lovePage" class="section active">
+  <h1>Happy Valentine’s Day ❤️</h1>
+
+  <img src="suba24.JPEG" class="main-image love-image">
+
+  <audio id="audio1" autoplay loop hidden>
+    <source src="song1.mpeg" type="audio/mpeg">
+  </audio>
+
+  <p>You make my heart smile every single day Thangoo 💖</p>
+
+  <button class="btn" onclick="showMemories()">Our Memories💍💕</button>
+</div>
+
+<!-- 💘 SECOND PAGE -->
+<div id="memoriesPage" class="section">
+  <h1>💘 Our Memories 💘</h1>
+  <p>Every moment with you is my favorite memory ❤️</p>
+
+  <div class="gallery">
+    <div class="photo"><img src="suba22.JPEG"><p>You are the reason behind my happiest moments💋</p></div>
+    <div class="photo"><img src="suba2.JPEG"><p>In Your arms,I found my home 🏠</p></div>
+    <div class="photo"><img src="suba4.JPEG"><p>When I’m with you, everything feels right💑</p></div>
+    <div class="photo"><img src="suba5.JPEG"><p>Safest Place❤️</p></div>
+    <div class="photo"><img src="suba6.JPEG"><p>Smiles❤️</p></div>
+    <div class="photo"><img src="suba7.JPEG"><p>Always you💍</p></div>
+  </div>
+
+  <button class="btn" onclick="showThirdPage()">Always Continues...💕</button>
+</div>
+
+<!-- 💝 THIRD PAGE -->
+<div id="thirdPage" class="section">
+  <h1>In every version of me ,I still choose you ❤️</h1>
+  
+
+  <img id="slideshowImage" class="third-image" src="subak4.jpeg">
+
+  <audio id="audio3" loop hidden>
+    <source src="song4.mpeg" type="audio/mpeg">
+  </audio>
+
+  <button class="btn" onclick="showMemories()">⬅ Previous</button>
+</div>
+
+</div>
+
+<script>
+function showMemories(){
+  document.getElementById("lovePage").classList.remove("active");
+  document.getElementById("thirdPage").classList.remove("active");
+  document.getElementById("memoriesPage").classList.add("active");
+
+  document.getElementById("audio3").pause();
+  document.getElementById("audio3").currentTime = 0;
+}
+
+function showThirdPage(){
+  document.getElementById("lovePage").classList.remove("active");
+  document.getElementById("memoriesPage").classList.remove("active");
+  document.getElementById("thirdPage").classList.add("active");
+
+  document.getElementById("audio1").pause();
+  document.getElementById("audio3").play();
+
+  startSlideshow();
+}
+
+/* 💗 Slideshow */
+const images=[
+  "subak4.jpeg","subak5.jpeg","subak6.jpeg","subak7.jpeg",
+  "subak8.jpeg","subak7.JPEG","subak8.JPEG","suba2.jpeg"
+];
+
+let index=0;
+let slideshowInterval;
+
+function startSlideshow(){
+  clearInterval(slideshowInterval);
+  index=0;
+  document.getElementById("slideshowImage").src=images[index];
+
+  slideshowInterval=setInterval(()=>{
+    index=(index+1)%images.length;
+    document.getElementById("slideshowImage").src=images[index];
+  },3000);
+}
+
+/* Browser autoplay unlock */
+document.addEventListener("click",function playOnce(){
+  document.getElementById("audio1").play();
+  document.removeEventListener("click",playOnce);
+});
+</script>
+
+</body>
+</html>
